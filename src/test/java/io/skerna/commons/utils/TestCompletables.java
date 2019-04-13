@@ -5,10 +5,7 @@ import org.junit.jupiter.api.Test;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.BiConsumer;
 
-/**
- * @author Ronald Cárdenas
- * project: skerna-reactor created at 13/03/19
- **/
+
 public class TestCompletables {
 
     @Test

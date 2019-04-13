@@ -21,10 +21,7 @@ import static java.util.concurrent.TimeUnit.SECONDS;
 import static java.util.stream.Collectors.toList;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-/**
- * @author Ronald Cárdenas
- * project: skerna-reactor created at 11/03/19
- **/
+
 class CompletableFuturesTest {
 
 

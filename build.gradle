@@ -1,7 +1,13 @@
 plugins {
     id "java-library"
+    id "com.jfrog.bintray" version "1.8.4"
 }
 apply plugin: 'maven-publish'
+apply from : 'gradle/publish.gradle'
+
+repositories {
+    mavenCentral()
+}
 
 dependencies {
     testImplementation 'org.hamcrest:hamcrest-library:2.1'
@@ -13,14 +19,3 @@ test {
     useJUnitPlatform()
 }
 
-publishing {
-    publications {
-        maven(MavenPublication) {
-            groupId project.group
-            artifactId project.name
-            version project.version
-
-            from components.java
-        }
-    }
-}
