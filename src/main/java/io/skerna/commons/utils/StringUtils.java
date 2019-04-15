@@ -28,6 +28,9 @@ public class StringUtils {
 
     /**
      * Format the string. Replace "{}" with %s and format the string using {@link String#format(String, Object...)}.
+     * @param  str raw string template
+     * @param  args arguments
+     * @return String formated string
      */
     public static String format(String str, Object... args) {
         str = str.replaceAll("\\{}", "%s");
@@ -38,11 +41,9 @@ public class StringUtils {
     /**
      * <p>Adds a substring only if the source string does not already start with the substring,
      * otherwise returns the source string.</p>
-     * <p/>
      * <p>A {@code null} source string will return {@code null}.
      * An empty ("") source string will return the empty string.
      * A {@code null} search string will return the source string.</p>
-     * <p/>
      * <pre>
      * StringUtils.addStart(null, *)      = *
      * StringUtils.addStart("", *)        = *

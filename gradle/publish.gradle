@@ -20,6 +20,22 @@ ext {
     allLicenses = ["Apache-2.0"]
 }
 
+// custom tasks for creating source/javadoc jars
+task sourcesJar(type: Jar, dependsOn: classes) {
+    archiveClassifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    archiveClassifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+// add javadoc/source jar tasks as artifacts
+artifacts {
+    archives sourcesJar
+}
+
 publishing {
     publications {
         maven(MavenPublication) {
@@ -36,9 +52,8 @@ publishing {
 bintray {
 	user = System.getenv('BINTRAY_USER')
 	key = System.getenv('BINTRAY_KEY')
-	publications = ['mavenPublication']
-
-	 configurations = ['archives']
+	publications = ['MavenPublication']
+    configurations = ['archives']
     pkg {
         repo = bintrayRepo
         name = bintrayName
