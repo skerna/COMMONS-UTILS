@@ -3,11 +3,12 @@ plugins {
     id "com.jfrog.bintray" version "1.8.4"
 }
 apply plugin: 'maven-publish'
+
 apply from : 'gradle/publish.gradle'
 
 repositories {
     mavenCentral()
-    maven { url "https://jitpack.io" }
+    maven { url  "https://dl.bintray.com/skerna/maven" }
 }
 
 dependencies {
